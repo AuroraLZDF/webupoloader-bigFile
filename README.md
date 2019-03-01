@@ -9,7 +9,7 @@
 ## 安装
 
 ```bash
-composer require aurora/big-file-upload
+composer require auroralzdf/big-file-upload
 ```
 
 ```bash
