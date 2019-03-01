@@ -10,7 +10,9 @@
 
 ```bash
 composer require aurora/big-file-upload
+```
 
+```bash
 php artisan vendor:publish --provider='AuroraLZDF\Bigfile\BigfileServiceProvider'
 ```
 
