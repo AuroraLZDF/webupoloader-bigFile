@@ -127,7 +127,9 @@ WebUploader.Uploader.register({
 
             return $.when(task);
         } else {    // 上传文件小于最小分片值： `chunkSize`
-            UploadComplete(file);
+            //UploadComplete(file);
+            console.log('文件小于最小上传尺寸：' + (chunkSize / 1024 / 1024) + 'M');
+            $("#" + file.id + " .percentage").text('文件小于最小上传尺寸：' + (chunkSize / 1024 / 1024) + 'M').css({'color': 'red'});
         }
     }
 });
@@ -269,3 +271,12 @@ $("#theList").on("click", ".itemDel", function () {
     uploader.removeFile($(this).parent().attr("id"));   //从上传文件列表中删除
     $(this).parent().remove();  //从上传列表dom中删除
 });
+
+/**
+ * TODO: 再次上传
+ */
+/*$('#reUpload').click(function () {
+    // 重置uploader。目前只重置了队列。
+    $('#theList').children().remove();
+    uploader.reset();
+});*/
